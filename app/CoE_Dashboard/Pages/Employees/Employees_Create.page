@@ -1,0 +1,128 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/CoE_Dashboard/Actions/CloseModalPage_Cancel.action",
+				"Position": "Left",
+				"SystemItem": "Cancel"
+			},
+			{
+				"OnPress": "/CoE_Dashboard/Rules/Employees/Employees_CreateEntity.js",
+				"Position": "Right",
+				"SystemItem": "Save"
+			}
+		]
+	},
+	"Caption": "Create Employees Detail",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0",
+					"Visible": true,
+					"Controls": [
+						{
+							"Caption": "ID",
+							"KeyboardType": "Number",
+							"_Name": "ID",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Name",
+							"_Name": "Name",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Status",
+							"_Name": "Status",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Designation",
+							"_Name": "Designation",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Email",
+							"_Name": "Email",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Department",
+							"_Name": "Department",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Contact",
+							"_Name": "Contact",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Address",
+							"_Name": "Address",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "City",
+							"_Name": "City",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Postal_Code",
+							"KeyboardType": "Number",
+							"_Name": "Postal_Code",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Country",
+							"_Name": "Country",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "project_ID",
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"IsEditable": true,
+							"IsPickerDismissedOnSelection": true,
+							"IsSelectedSectionEnabled": true,
+							"PickerItems": {
+								"DisplayValue": "{ID}",
+								"ReturnValue": "{ID}",
+								"Target": {
+									"EntitySet": "Projects",
+									"Service": "/CoE_Dashboard/Services/service1.service"
+								}
+							},
+							"_Name": "project_ID",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"Caption": "module_ID",
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"IsEditable": true,
+							"IsPickerDismissedOnSelection": true,
+							"IsSelectedSectionEnabled": true,
+							"PickerItems": {
+								"DisplayValue": "{ID}",
+								"ReturnValue": "{ID}",
+								"Target": {
+									"EntitySet": "Modules",
+									"Service": "/CoE_Dashboard/Services/service1.service"
+								}
+							},
+							"_Name": "module_ID",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						}
+					]
+				}
+			],
+			"_Name": "SectionedTable0",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Employees_Create",
+	"PrefersLargeCaption": true
+}

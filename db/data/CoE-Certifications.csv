@@ -1,0 +1,6 @@
+ID,CCODE,Description,module_id,employee_id
+CID001,C_HANAAW_17,SAP Certified Development Specialist - ABAP for SAP HANA 2.0,MD001,2020002247
+CID002,C_CPE_14,SAP Certified Development Associate - SAP Extension Suite,MD001,2020002247
+CID004,C_HCDEV_01,SAP Certified Development Associate - SAP HANA Cloud 1.0,MD001,2020002247
+CID005,C_FIORDEV_22,SAP Certified Development Associate - SAP Fiori Application Developer,MD001,2020002247
+CID006,C_BW4HANA_27,SAP Certified Application Associate - Reporting Modeling and Data Acquisition with SAP BW/4HANA 2.x,MD001,2020002247

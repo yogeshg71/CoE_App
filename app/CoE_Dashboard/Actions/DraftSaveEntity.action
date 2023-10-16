@@ -1,0 +1,19 @@
+{
+    "_Type": "Action.Type.ODataService.DraftEnabled.Save",
+    "Target": {
+        "Service": "/CoE_Dashboard/Services/service1.service",
+        "EntitySet": "Certifications",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "ShowActivityIndicator": true,
+    "ActionResult": {
+        "_Name": "update"
+    },
+    "OnSuccess": {
+        "Name": "/CoE_Dashboard/Actions/UpdateEntitySuccessMessage.action",
+        "Properties": {
+            "Message": "Draft Saved"
+        }
+    },
+    "OnFailure": "/CoE_Dashboard/Actions/UpdateEntityFailureMessage.action"
+}

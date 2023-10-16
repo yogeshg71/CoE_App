@@ -1,0 +1,20 @@
+{
+    "PopoverItems": [{
+            "Title": "Add Skills",
+            "OnPress": "/CoE_Dashboard/Rules/Employees/NavToEmployees_CreateSkills.js"
+        },
+        {
+            "Title": "Add Utilizations",
+            "OnPress": "/CoE_Dashboard/Rules/Employees/NavToEmployees_CreateUtilizations.js"
+        },
+        {
+            "Title": "Add Certifications",
+            "OnPress": "/CoE_Dashboard/Rules/Employees/NavToEmployees_CreateCertifications.js"
+        },
+        {
+            "Title": "Delete",
+            "OnPress": "/CoE_Dashboard/Rules/Employees/Employees_DeleteConfirmation.js"
+        }
+    ],
+    "_Type": "Action.Type.PopoverMenu"
+}

@@ -1,0 +1,16 @@
+{
+    "PopoverItems": [{
+            "Title": "Add Utilizations",
+            "OnPress": "/CoE_Dashboard/Rules/Projects/NavToProjects_CreateUtilizations.js"
+        },
+        {
+            "Title": "Add Employees",
+            "OnPress": "/CoE_Dashboard/Rules/Projects/NavToProjects_CreateEmployees.js"
+        },
+        {
+            "Title": "Delete",
+            "OnPress": "/CoE_Dashboard/Rules/Projects/Projects_DeleteConfirmation.js"
+        }
+    ],
+    "_Type": "Action.Type.PopoverMenu"
+}

@@ -1,0 +1,87 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/CoE_Dashboard/Actions/CloseModalPage_Cancel.action",
+				"Position": "Left",
+				"SystemItem": "Cancel"
+			},
+			{
+				"OnPress": "/CoE_Dashboard/Rules/Employees/Employees_CreateCertifications.js",
+				"Position": "Right",
+				"SystemItem": "Save"
+			}
+		]
+	},
+	"Caption": "Create Certifications",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0",
+					"Visible": true,
+					"Controls": [
+						{
+							"Caption": "ID",
+							"_Name": "ID",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "CCode",
+							"_Name": "CCode",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Description",
+							"_Name": "Description",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "module_ID",
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"IsEditable": true,
+							"IsPickerDismissedOnSelection": true,
+							"IsSelectedSectionEnabled": true,
+							"PickerItems": {
+								"DisplayValue": "{ID}",
+								"ReturnValue": "{ID}",
+								"Target": {
+									"EntitySet": "Modules",
+									"Service": "/CoE_Dashboard/Services/service1.service"
+								}
+							},
+							"_Name": "module_ID",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"Caption": "employee_ID",
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"IsEditable": false,
+							"IsPickerDismissedOnSelection": true,
+							"IsSelectedSectionEnabled": true,
+							"PickerItems": {
+								"DisplayValue": "{ID}",
+								"ReturnValue": "{ID}",
+								"Target": {
+									"EntitySet": "Employees",
+									"Service": "/CoE_Dashboard/Services/service1.service"
+								}
+							},
+							"_Name": "employee_ID",
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"Value": "{ID}"
+						}
+					]
+				}
+			],
+			"_Name": "SectionedTable0",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Employees_CreateCertifications",
+	"PrefersLargeCaption": true
+}

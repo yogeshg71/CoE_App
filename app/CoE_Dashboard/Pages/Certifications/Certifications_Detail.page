@@ -1,0 +1,80 @@
+{
+	"Caption": "Certifications Detail",
+	"DesignTimeTarget": {
+		"Service": "/CoE_Dashboard/Services/service1.service",
+		"EntitySet": "Certifications",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/CoE_Dashboard/Rules/Certifications/NavToCertifications_Edit.js",
+				"Position": "Right",
+				"SystemItem": "Edit"
+			},
+			{
+				"OnPress": "/CoE_Dashboard/Rules/Certifications/Certifications_DeleteConfirmation.js",
+				"Position": "Right",
+				"SystemItem": "Trash"
+			}
+		]
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ID}",
+						"Subhead": "{CCode}",
+						"BodyText": "",
+						"Footnote": "{module_ID}",
+						"Description": "{Description}",
+						"StatusText": "{employee_ID}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ID",
+							"Value": "{ID}"
+						},
+						{
+							"KeyName": "CCode",
+							"Value": "{CCode}"
+						},
+						{
+							"KeyName": "Description",
+							"Value": "{Description}"
+						},
+						{
+							"KeyName": "module_ID",
+							"Value": "{module_ID}"
+						},
+						{
+							"KeyName": "employee_ID",
+							"Value": "{employee_ID}"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Certifications_Detail",
+	"PrefersLargeCaption": true
+}

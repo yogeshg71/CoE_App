@@ -1,0 +1,9 @@
+{
+    "DestinationName": "../service/CoE_Dashboard/",
+    "OfflineEnabled": false,
+    "LanguageURLParam": "",
+    "OnlineOptions": {},
+    "PathSuffix": "",
+    "SourceType": "Cloud",
+    "ServiceUrl":""
+}

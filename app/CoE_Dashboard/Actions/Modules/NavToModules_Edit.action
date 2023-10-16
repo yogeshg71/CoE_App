@@ -1,0 +1,6 @@
+{
+    "ModalPageFullscreen": false,
+    "ModalPage": true,
+    "PageToOpen": "/CoE_Dashboard/Pages/Modules/Modules_Edit.page",
+    "_Type": "Action.Type.Navigation"
+}

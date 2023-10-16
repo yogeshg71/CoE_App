@@ -1,0 +1,19 @@
+{
+    "_Type": "Action.Type.ODataService.DraftEnabled.Discard",
+    "Target": {
+        "Service": "/CoE_Dashboard/Services/service1.service",
+        "EntitySet": "Certifications",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "ShowActivityIndicator": true,
+    "ActionResult": {
+        "_Name": "update"
+    },
+    "OnSuccess": {
+        "Name": "/CoE_Dashboard/Actions/UpdateEntitySuccessMessage.action",
+        "Properties": {
+            "Message": "Draft Discarded"
+        }
+    },
+    "OnFailure": "/CoE_Dashboard/Actions/UpdateEntityFailureMessage.action"
+}

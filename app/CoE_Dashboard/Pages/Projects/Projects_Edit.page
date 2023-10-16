@@ -1,0 +1,77 @@
+{
+	"Caption": "Update Projects Detail",
+	"DesignTimeTarget": {
+		"Service": "/CoE_Dashboard/Services/service1.service",
+		"EntitySet": "Projects",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [
+			{
+				"Position": "Left",
+				"Caption": "Cancel",
+				"OnPress": "/CoE_Dashboard/Rules/Projects/Projects_Cancel.js"
+			},
+			{
+				"Position": "Right",
+				"SystemItem": "Save",
+				"OnPress": "/CoE_Dashboard/Rules/Projects/Projects_UpdateEntity.js"
+			}
+		]
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0",
+					"Visible": true,
+					"Controls": [
+						{
+							"Caption": "ID",
+							"_Name": "ID",
+							"Value": "{ID}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"IsEditable": false
+						},
+						{
+							"Caption": "Name",
+							"_Name": "Name",
+							"Value": "{Name}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Description",
+							"_Name": "Description",
+							"Value": "{Description}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "module_ID",
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"IsPickerDismissedOnSelection": true,
+							"IsSelectedSectionEnabled": true,
+							"PickerItems": {
+								"DisplayValue": "{ID}",
+								"ReturnValue": "{ID}",
+								"Target": {
+									"EntitySet": "Modules",
+									"Service": "/CoE_Dashboard/Services/service1.service"
+								}
+							},
+							"Value": "{module_ID}",
+							"_Name": "module_ID",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						}
+					]
+				}
+			],
+			"_Name": "SectionedTable0",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Projects_Edit",
+	"PrefersLargeCaption": true
+}

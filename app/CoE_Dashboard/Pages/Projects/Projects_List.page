@@ -1,0 +1,73 @@
+{
+	"Caption": "Projects",
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/CoE_Dashboard/Actions/Projects/NavToProjects_Create.action",
+				"Position": "Right",
+				"SystemItem": "Add"
+			}
+		]
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Header": {
+						"UseTopPadding": false
+					},
+					"ObjectCell": {
+						"AccessoryType": "disclosureIndicator",
+						"Description": "{Description}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"OnPress": "/CoE_Dashboard/Actions/Projects/NavToProjects_Detail.action",
+						"StatusImage": "",
+						"Title": "{Name}",
+						"Footnote": "{module_ID}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "",
+						"Subhead": "{ID}",
+						"SubstatusText": ""
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Search": {
+						"Enabled": true,
+						"Placeholder": "Item Search",
+						"BarcodeScanner": true,
+						"Delay": 500,
+						"MinimumCharacterThreshold": 3
+					},
+					"DataPaging": {
+						"ShowLoadingIndicator": true,
+						"LoadingIndicatorText": "Loading more items, please wait..."
+					},
+					"Target": {
+						"EntitySet": "Projects",
+						"Service": "/CoE_Dashboard/Services/service1.service",
+						"QueryOptions": ""
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"LoadingIndicator": {
+				"Enabled": true,
+				"Text": "Loading, please wait..."
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Projects_List",
+	"PrefersLargeCaption": true
+}

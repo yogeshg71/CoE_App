@@ -1,0 +1,50 @@
+{
+	"Credential": "cf",
+	"Template": {
+		"Id": "@ext-mdkvsc-npm-dev/generator-mdk",
+		"Name": "CRUD",
+		"Version": "0.0.1"
+	},
+	"CF": {
+		"Target": "https://api.cf.us10-001.hana.ondemand.com",
+		"Organization": "1f7dad11-674d-4ab9-8fce-00351a89fbbc",
+		"Space": "f3a919eb-9dfe-454c-96ff-3144b51880de"
+	},
+	"MobileService": {
+		"Type": "standard",
+		"AdminAPI": "https://mobile-service-cockpit-api.cfapps.us10.hana.ondemand.com/cockpit/v1/org/1f7dad11-674d-4ab9-8fce-00351a89fbbc/space/f3a919eb-9dfe-454c-96ff-3144b51880de",
+		"AppId": "lcap.CoE_Dashboard.CoE_Dashboard",
+		"Destination": [
+			"CoE_DashboardService"
+		],
+		"Create": true,
+		"DestinationName": "CoE_DashboardService",
+		"DestinationUrl": "https://8d13aae0trial-dev-coe-dashboard-srv.cfapps.us10-001.hana.ondemand.com/service/CoE_Dashboard",
+		"Uaa": "CoE_Dashboard-uaa"
+	},
+	"Onboarding": {
+		"Schema": "sapmobilesvcs",
+		"TimeZone": "UTC",
+		"URL": "sapmobilesvcs://?AppId=lcap.CoE_Dashboard.CoE_Dashboard&ClientId=c3135563-ba4e-4f6a-bdc9-9448d0e6609f&ServerUrl=https://8d13aae0trial-dev-lcap-coe-dashboard-coe-dashboard.cfapps.us10-001.hana.ondemand.com&SapCloudPlatformEndpoint=https://8d13aae0trial-dev-lcap-coe-dashboard-coe-dashboard.cfapps.us10-001.hana.ondemand.com&AuthorizationEndpointUrl=https://8d13aae0trial-dev-lcap-coe-dashboard-coe-dashboard.cfapps.us10-001.hana.ondemand.com/oauth2/api/v1/authorize&RedirectUrl=https://8d13aae0trial-dev-lcap-coe-dashboard-coe-dashboard.cfapps.us10-001.hana.ondemand.com&TokenUrl=https://8d13aae0trial-dev-lcap-coe-dashboard-coe-dashboard.cfapps.us10-001.hana.ondemand.com/oauth2/api/v1/token&multiUser=false"
+	},
+	"LCAP": {
+		"FullName": "CoE_Dashboard_CoE_Dashboard",
+		"Service": [
+			{
+				"mdk": "CoE_Dashboard/Services/service1.service",
+				"cap": {
+					"name": "CoE_DashboardService",
+					"sourcePath": "srv/service.cds",
+					"path": "/service/CoE_Dashboard/",
+					"entryPath": "/service/CoE_Dashboard",
+					"destination": "CoE_Dashboard-app-srv",
+					"value": "0"
+				}
+			}
+		],
+		"sourceTemplate": {
+			"id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
+			"version": "1.40.12"
+		}
+	}
+}

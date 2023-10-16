@@ -1,0 +1,218 @@
+{
+	"Caption": "Employees Detail",
+	"DesignTimeTarget": {
+		"Service": "/CoE_Dashboard/Services/service1.service",
+		"EntitySet": "Employees",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/CoE_Dashboard/Rules/Employees/NavToEmployees_Edit.js",
+				"Position": "Right",
+				"SystemItem": "Edit"
+			},
+			{
+				"OnPress": "/CoE_Dashboard/Actions/Employees/Employees_DetailPopover.action",
+				"Position": "Right",
+				"Caption": "More"
+			}
+		]
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Name}",
+						"Subhead": "{ID}",
+						"BodyText": "",
+						"Footnote": "{Designation}",
+						"Description": "{Status}",
+						"StatusText": "{Email}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Department}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ID",
+							"Value": "{ID}"
+						},
+						{
+							"KeyName": "Name",
+							"Value": "{Name}"
+						},
+						{
+							"KeyName": "Status",
+							"Value": "{Status}"
+						},
+						{
+							"KeyName": "Designation",
+							"Value": "{Designation}"
+						},
+						{
+							"KeyName": "Email",
+							"Value": "{Email}"
+						},
+						{
+							"KeyName": "Department",
+							"Value": "{Department}"
+						},
+						{
+							"KeyName": "Contact",
+							"Value": "{Contact}"
+						},
+						{
+							"KeyName": "Address",
+							"Value": "{Address}"
+						},
+						{
+							"KeyName": "City",
+							"Value": "{City}"
+						},
+						{
+							"KeyName": "Postal_Code",
+							"Value": "{Postal_Code}"
+						},
+						{
+							"KeyName": "Country",
+							"Value": "{Country}"
+						},
+						{
+							"KeyName": "project_ID",
+							"Value": "{project_ID}"
+						},
+						{
+							"KeyName": "module_ID",
+							"Value": "{module_ID}"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "skills"
+					},
+					"ObjectCell": {
+						"AccessoryType": "disclosureIndicator",
+						"Description": "{SUBID}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{Name}",
+						"Footnote": "{Description}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{Level}",
+						"Subhead": "{ID}",
+						"SubstatusText": "{module_ID}",
+						"OnPress": "/CoE_Dashboard/Actions/Skills/NavToSkills_Detail.action"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/skills",
+						"Service": "/CoE_Dashboard/Services/service1.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "utilizations"
+					},
+					"ObjectCell": {
+						"AccessoryType": "disclosureIndicator",
+						"Description": "{Remarks}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{ID}",
+						"Footnote": "{module_ID}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{project_ID}",
+						"Subhead": "{UT_PER}",
+						"SubstatusText": "{employee_ID}",
+						"OnPress": "/CoE_Dashboard/Actions/Utilizations/NavToUtilizations_Detail.action"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/utilizations",
+						"Service": "/CoE_Dashboard/Services/service1.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "certifications"
+					},
+					"ObjectCell": {
+						"AccessoryType": "disclosureIndicator",
+						"Description": "{Description}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{ID}",
+						"Footnote": "{module_ID}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{employee_ID}",
+						"Subhead": "{CCode}",
+						"SubstatusText": "",
+						"OnPress": "/CoE_Dashboard/Actions/Certifications/NavToCertifications_Detail.action"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/certifications",
+						"Service": "/CoE_Dashboard/Services/service1.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"Skills",
+				"Utilizations",
+				"Certifications"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Employees_Detail",
+	"PrefersLargeCaption": true
+}

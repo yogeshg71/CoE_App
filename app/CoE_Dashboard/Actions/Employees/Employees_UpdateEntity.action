@@ -1,0 +1,29 @@
+{
+    "_Type": "Action.Type.ODataService.UpdateEntity",
+    "Target": {
+        "EntitySet": "Employees",
+        "Service": "/CoE_Dashboard/Services/service1.service",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "Properties": {
+        "ID": "#Control:ID/#Value",
+        "Name": "#Control:Name/#Value",
+        "Status": "#Control:Status/#Value",
+        "Designation": "#Control:Designation/#Value",
+        "Email": "#Control:Email/#Value",
+        "Department": "#Control:Department/#Value",
+        "Contact": "#Control:Contact/#Value",
+        "Address": "#Control:Address/#Value",
+        "City": "#Control:City/#Value",
+        "Postal_Code": "#Control:Postal_Code/#Value",
+        "Country": "#Control:Country/#Value",
+        "project_ID": "#Control:project_ID/#SelectedValue",
+        "module_ID": "#Control:module_ID/#SelectedValue"
+    },
+    "UpdateLinks": [],
+    "ActionResult": {
+        "_Name": "update"
+    },
+    "OnSuccess": "/CoE_Dashboard/Actions/UpdateEntitySuccessMessage.action",
+    "OnFailure": "/CoE_Dashboard/Actions/UpdateEntityFailureMessage.action"
+}

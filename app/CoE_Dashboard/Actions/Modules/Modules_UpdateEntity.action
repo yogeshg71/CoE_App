@@ -1,0 +1,19 @@
+{
+    "_Type": "Action.Type.ODataService.UpdateEntity",
+    "Target": {
+        "EntitySet": "Modules",
+        "Service": "/CoE_Dashboard/Services/service1.service",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "Properties": {
+        "ID": "#Control:ID/#Value",
+        "Name": "#Control:Name/#Value",
+        "Description": "#Control:Description/#Value"
+    },
+    "UpdateLinks": [],
+    "ActionResult": {
+        "_Name": "update"
+    },
+    "OnSuccess": "/CoE_Dashboard/Actions/UpdateEntitySuccessMessage.action",
+    "OnFailure": "/CoE_Dashboard/Actions/UpdateEntityFailureMessage.action"
+}

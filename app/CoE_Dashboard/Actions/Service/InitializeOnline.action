@@ -1,0 +1,10 @@
+{
+    "Service": "/CoE_Dashboard/Services/service1.service",
+    "_Type": "Action.Type.ODataService.Initialize",
+    "ShowActivityIndicator": true,
+    "OnSuccess": "/CoE_Dashboard/Actions/Service/InitializeOnlineSuccessMessage.action",
+    "OnFailure": "/CoE_Dashboard/Actions/Service/InitializeOnlineFailureMessage.action",
+    "ActionResult": {
+        "_Name": "init"
+    }
+}

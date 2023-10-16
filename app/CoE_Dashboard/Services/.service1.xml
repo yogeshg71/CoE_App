@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="CoE_DashboardService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Modules" EntityType="CoE_DashboardService.Modules">
+                    <NavigationPropertyBinding Path="projects" Target="Projects"/>
+                    <NavigationPropertyBinding Path="employees" Target="Employees"/>
+                    <NavigationPropertyBinding Path="skills" Target="Skills"/>
+                    <NavigationPropertyBinding Path="certifications" Target="Certifications"/>
+                    <NavigationPropertyBinding Path="utilizations" Target="Utilizations"/>
+                </EntitySet>
+                <EntitySet Name="Projects" EntityType="CoE_DashboardService.Projects">
+                    <NavigationPropertyBinding Path="module" Target="Modules"/>
+                    <NavigationPropertyBinding Path="utilizations" Target="Utilizations"/>
+                    <NavigationPropertyBinding Path="employees" Target="Employees"/>
+                </EntitySet>
+                <EntitySet Name="Employees" EntityType="CoE_DashboardService.Employees">
+                    <NavigationPropertyBinding Path="project" Target="Projects"/>
+                    <NavigationPropertyBinding Path="module" Target="Modules"/>
+                    <NavigationPropertyBinding Path="skills" Target="Skills"/>
+                    <NavigationPropertyBinding Path="utilizations" Target="Utilizations"/>
+                    <NavigationPropertyBinding Path="certifications" Target="Certifications"/>
+                </EntitySet>
+                <EntitySet Name="Skills" EntityType="CoE_DashboardService.Skills">
+                    <NavigationPropertyBinding Path="module" Target="Modules"/>
+                    <NavigationPropertyBinding Path="employee" Target="Employees"/>
+                </EntitySet>
+                <EntitySet Name="Utilizations" EntityType="CoE_DashboardService.Utilizations">
+                    <NavigationPropertyBinding Path="module" Target="Modules"/>
+                    <NavigationPropertyBinding Path="project" Target="Projects"/>
+                    <NavigationPropertyBinding Path="employee" Target="Employees"/>
+                </EntitySet>
+                <EntitySet Name="Certifications" EntityType="CoE_DashboardService.Certifications">
+                    <NavigationPropertyBinding Path="module" Target="Modules"/>
+                    <NavigationPropertyBinding Path="employee" Target="Employees"/>
+                </EntitySet>
+            </EntityContainer>
+            <EntityType Name="Modules">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" MaxLength="5" Nullable="false"/>
+                <Property Name="Name" Type="Edm.String" MaxLength="20"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="40"/>
+                <NavigationProperty Name="projects" Type="Collection(CoE_DashboardService.Projects)" Partner="module"/>
+                <NavigationProperty Name="employees" Type="Collection(CoE_DashboardService.Employees)" Partner="module"/>
+                <NavigationProperty Name="skills" Type="Collection(CoE_DashboardService.Skills)" Partner="module"/>
+                <NavigationProperty Name="certifications" Type="CoE_DashboardService.Certifications" Partner="module">
+                    <ReferentialConstraint Property="module_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <NavigationProperty Name="utilizations" Type="CoE_DashboardService.Utilizations" Partner="module">
+                    <ReferentialConstraint Property="module_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="Projects">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" MaxLength="7" Nullable="false"/>
+                <Property Name="Name" Type="Edm.String" MaxLength="20"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="50"/>
+                <NavigationProperty Name="module" Type="CoE_DashboardService.Modules" Partner="projects">
+                    <ReferentialConstraint Property="module_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="module_ID" Type="Edm.String" MaxLength="5"/>
+                <NavigationProperty Name="utilizations" Type="Collection(CoE_DashboardService.Utilizations)" Partner="project"/>
+                <NavigationProperty Name="employees" Type="Collection(CoE_DashboardService.Employees)" Partner="project"/>
+            </EntityType>
+            <EntityType Name="Employees">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="Name" Type="Edm.String" MaxLength="100"/>
+                <Property Name="Status" Type="Edm.String" MaxLength="10"/>
+                <Property Name="Designation" Type="Edm.String" MaxLength="50"/>
+                <Property Name="Email" Type="Edm.String" MaxLength="60"/>
+                <Property Name="Department" Type="Edm.String" MaxLength="40"/>
+                <Property Name="Contact" Type="Edm.String" MaxLength="18"/>
+                <Property Name="Address" Type="Edm.String" MaxLength="100"/>
+                <Property Name="City" Type="Edm.String" MaxLength="50"/>
+                <Property Name="Postal_Code" Type="Edm.Int32"/>
+                <Property Name="Country" Type="Edm.String" MaxLength="20"/>
+                <NavigationProperty Name="project" Type="CoE_DashboardService.Projects" Partner="employees">
+                    <ReferentialConstraint Property="project_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="project_ID" Type="Edm.String" MaxLength="7"/>
+                <NavigationProperty Name="module" Type="CoE_DashboardService.Modules" Partner="employees">
+                    <ReferentialConstraint Property="module_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="module_ID" Type="Edm.String" MaxLength="5"/>
+                <NavigationProperty Name="skills" Type="Collection(CoE_DashboardService.Skills)" Partner="employee"/>
+                <NavigationProperty Name="utilizations" Type="Collection(CoE_DashboardService.Utilizations)" Partner="employee"/>
+                <NavigationProperty Name="certifications" Type="Collection(CoE_DashboardService.Certifications)" Partner="employee"/>
+            </EntityType>
+            <EntityType Name="Skills">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" MaxLength="6" Nullable="false"/>
+                <Property Name="SUBID" Type="Edm.String" MaxLength="9"/>
+                <Property Name="Name" Type="Edm.String" MaxLength="100"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="100"/>
+                <Property Name="Level" Type="Edm.String" MaxLength="100"/>
+                <NavigationProperty Name="module" Type="CoE_DashboardService.Modules" Partner="skills">
+                    <ReferentialConstraint Property="module_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="module_ID" Type="Edm.String" MaxLength="5"/>
+                <NavigationProperty Name="employee" Type="CoE_DashboardService.Employees" Partner="skills">
+                    <ReferentialConstraint Property="employee_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="employee_ID" Type="Edm.Int32"/>
+            </EntityType>
+            <EntityType Name="Utilizations">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" MaxLength="6" Nullable="false"/>
+                <Property Name="UT_PER" Type="Edm.Double"/>
+                <Property Name="Remarks" Type="Edm.String" MaxLength="60"/>
+                <NavigationProperty Name="module" Type="CoE_DashboardService.Modules" Partner="utilizations">
+                    <ReferentialConstraint Property="module_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="module_ID" Type="Edm.String" MaxLength="5"/>
+                <NavigationProperty Name="project" Type="CoE_DashboardService.Projects" Partner="utilizations">
+                    <ReferentialConstraint Property="project_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="project_ID" Type="Edm.String" MaxLength="7"/>
+                <NavigationProperty Name="employee" Type="CoE_DashboardService.Employees" Partner="utilizations">
+                    <ReferentialConstraint Property="employee_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="employee_ID" Type="Edm.Int32"/>
+            </EntityType>
+            <EntityType Name="Certifications">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="CCode" Type="Edm.String" MaxLength="50"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="100"/>
+                <NavigationProperty Name="module" Type="CoE_DashboardService.Modules" Partner="certifications">
+                    <ReferentialConstraint Property="module_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="module_ID" Type="Edm.String" MaxLength="5"/>
+                <NavigationProperty Name="employee" Type="CoE_DashboardService.Employees" Partner="certifications">
+                    <ReferentialConstraint Property="employee_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="employee_ID" Type="Edm.Int32"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

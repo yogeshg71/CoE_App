@@ -1,0 +1,213 @@
+_schema-version: '3.1'
+ID: CoE_Dashboard
+version: 1.0.0
+description: A simple CAP project.
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - rm -rf build/dist
+        - mkdir -p build/dist
+        - rm -rf build/ui-deployer
+        - mkdir -p build/ui-deployer
+    - builder: custom
+      commands:
+        - npm install --production
+        - >-
+          bash -c "cds -v | grep 'cds-dk' || npm i --production --no-save
+          @sap/cds-dk @sap/mdk-tools"
+        - bash -c "export PATH=$PATH:$(pwd)/node_modules/.bin"
+        - cds build --production
+modules:
+  - name: CoE_Dashboard-CoE_Dashboard
+    type: html5
+    path: app/CoE_Dashboard
+    build-parameters:
+      builder: custom
+      commands:
+        - npx mdk build --target module --ui5 --forceUpdate
+        - bash -c "cd Web/MDKModule && rm -rf .npmrc && npm install"
+        - bash -c "cd Web/MDKModule && npm run build"
+        - >-
+          bash -c "mv Web/MDKModule/MDKModule-content.zip
+          ../../build/dist/CoE_Dashboard.zip"
+        - rm -rf Web/MDKModule/dist
+      _artifactName: CoE_Dashboard.zip
+      supported-platforms: []
+      build-result: ../../build/dist
+  - name: CoE_Dashboard-db-deployer
+    type: hdb
+    path: gen/db
+    parameters:
+      buildpack: nodejs_buildpack
+    build-parameters:
+      builder: npm
+      ignore:
+        - node_modules
+        - package-lock.json
+    requires:
+      - name: CoE_Dashboard-service-uaa
+      - name: CoE_Dashboard-service-db
+  - name: CoE_Dashboard-srv
+    type: nodejs
+    path: gen/srv
+    parameters:
+      memory: 256MB
+    provides:
+      - name: srv-api
+        properties:
+          srv-url: ${default-url}
+    build-parameters:
+      builder: npm
+      ignore:
+        - node_modules
+        - package-lock.json
+    requires:
+      - name: CoE_Dashboard-service-uaa
+      - name: CoE_Dashboard-service-db
+      - name: CoE_Dashboard-service-destination
+      - name: CoE_Dashboard-service-metadata
+      - name: CoE_Dashboard-service-connectivity
+      - name: CoE_Dashboard-service-logs
+  - name: CoE_Dashboard-aux-destinations
+    type: com.sap.application.content
+    parameters:
+      content:
+        subaccount:
+          existing_destinations_policy: update
+          destinations:
+            - Authentication: OAuth2UserTokenExchange
+              Name: CoE_Dashboard-service-uaa
+              ServiceInstanceName: CoE_Dashboard-uaa
+              ServiceKeyName: CoE_Dashboard-uaa-key
+              sap.cloud.service: lcap.CoE_Dashboard
+            - Authentication: OAuth2UserTokenExchange
+              Name: CoE_Dashboard-app-srv
+              TokenServiceInstanceName: CoE_Dashboard-uaa
+              TokenServiceKeyName: CoE_Dashboard-uaa-key
+              URL: ~{srv-api/srv-url}
+              sap.cloud.service: lcap.CoE_Dashboard
+            - Name: CoE_Dashboard-service-html5-apps-repo-host
+              ServiceInstanceName: CoE_Dashboard-html5-apps-repo-host
+              ServiceKeyName: CoE_Dashboard-html5-apps-repo-host-key
+              sap.cloud.service: lcap.CoE_Dashboard
+            - Authentication: OAuth2UserTokenExchange
+              Name: CoE_Dashboard-CoE_DashboardService
+              TokenServiceInstanceName: CoE_Dashboard-uaa
+              TokenServiceKeyName: CoE_Dashboard-uaa-key
+              URL: ~{srv-api/srv-url}/service/CoE_Dashboard
+              sap.cloud.service: lcap.CoE_Dashboard
+              sap.applicationdevelopment.actions.enabled: false
+              sap.build.usage: CAP
+              sap.processautomation.enabled: false
+              HTML5.DynamicDestination: false
+              WebIDEEnabled: false
+              MobileEnabled: false
+              AppgyverEnabled: false
+    build-parameters:
+      no-source: true
+    requires:
+      - name: CoE_Dashboard-service-uaa
+        parameters:
+          service-key:
+            name: CoE_Dashboard-uaa-key
+      - name: srv-api
+      - name: CoE_Dashboard-service-html5-apps-repo-host
+        parameters:
+          service-key:
+            name: CoE_Dashboard-html5-apps-repo-host-key
+      - name: CoE_Dashboard-service-destination
+        parameters:
+          content-target: true
+  - name: CoE_Dashboard-launchpad
+    type: html5
+    path: build/launchpad
+    build-parameters:
+      builder: custom
+      commands:
+        - npm install
+        - >-
+          npx -p @ui5/cli@^3.0.0 ui5 build --dest dist
+          --include-task=generateManifestBundle
+          --include-task=generateCachebusterInfo
+        - bash -c "cd dist && npx bestzip ../../../build/dist/launchpad.zip *"
+        - rm -rf dist
+      _artifactName: launchpad.zip
+      supported-platforms: []
+      build-result: ../../build/dist
+  - name: CoE_Dashboard-aux-ui-deployer
+    type: com.sap.application.content
+    path: build/ui-deployer
+    build-parameters:
+      build-result: resources
+      requires:
+        - name: CoE_Dashboard-CoE_Dashboard
+          artifacts:
+            - CoE_Dashboard.zip
+          target-path: resources
+        - name: CoE_Dashboard-launchpad
+          artifacts:
+            - launchpad.zip
+          target-path: resources
+    requires:
+      - name: CoE_Dashboard-service-html5-apps-repo-host
+        parameters:
+          content-target: true
+resources:
+  - type: org.cloudfoundry.managed-service
+    name: CoE_Dashboard-service-uaa
+    parameters:
+      service: xsuaa
+      service-plan: application
+      service-name: CoE_Dashboard-uaa
+      path: xs-security.json
+      config:
+        oauth2-configuration:
+          redirect-uris:
+            - https://*.${default-domain}/login/*
+        xsappname: CoE_Dashboard-${space}
+        role-collections: []
+  - type: org.cloudfoundry.managed-service
+    name: CoE_Dashboard-service-db
+    parameters:
+      service: hana
+      service-plan: hdi-shared
+      service-name: CoE_Dashboard-db
+  - type: org.cloudfoundry.managed-service
+    name: CoE_Dashboard-service-destination
+    parameters:
+      service: destination
+      service-plan: lite
+      service-name: CoE_Dashboard-destination
+      config:
+        HTML5Runtime_enabled: true
+        version: 1.0.0
+  - type: org.cloudfoundry.user-provided-service
+    name: CoE_Dashboard-service-metadata
+    parameters:
+      service: metadata
+      service-plan: standard
+      service-name: CoE_Dashboard-metadata
+      config:
+        default-domain: ${default-domain}
+  - type: org.cloudfoundry.managed-service
+    name: CoE_Dashboard-service-connectivity
+    parameters:
+      service: connectivity
+      service-plan: lite
+      service-name: CoE_Dashboard-connectivity
+  - type: org.cloudfoundry.managed-service
+    name: CoE_Dashboard-service-logs
+    parameters:
+      service: application-logs
+      service-plan: lite
+      service-name: CoE_Dashboard-logs
+  - type: org.cloudfoundry.managed-service
+    name: CoE_Dashboard-service-html5-apps-repo-host
+    parameters:
+      service: html5-apps-repo
+      service-plan: app-host
+      service-name: CoE_Dashboard-html5-apps-repo-host

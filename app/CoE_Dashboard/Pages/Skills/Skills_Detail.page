@@ -1,0 +1,88 @@
+{
+	"Caption": "Skills Detail",
+	"DesignTimeTarget": {
+		"Service": "/CoE_Dashboard/Services/service1.service",
+		"EntitySet": "Skills",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/CoE_Dashboard/Rules/Skills/NavToSkills_Edit.js",
+				"Position": "Right",
+				"SystemItem": "Edit"
+			},
+			{
+				"OnPress": "/CoE_Dashboard/Rules/Skills/Skills_DeleteConfirmation.js",
+				"Position": "Right",
+				"SystemItem": "Trash"
+			}
+		]
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Name}",
+						"Subhead": "{ID}",
+						"BodyText": "",
+						"Footnote": "{Description}",
+						"Description": "{SUBID}",
+						"StatusText": "{Level}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{module_ID}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ID",
+							"Value": "{ID}"
+						},
+						{
+							"KeyName": "SUBID",
+							"Value": "{SUBID}"
+						},
+						{
+							"KeyName": "Name",
+							"Value": "{Name}"
+						},
+						{
+							"KeyName": "Description",
+							"Value": "{Description}"
+						},
+						{
+							"KeyName": "Level",
+							"Value": "{Level}"
+						},
+						{
+							"KeyName": "module_ID",
+							"Value": "{module_ID}"
+						},
+						{
+							"KeyName": "employee_ID",
+							"Value": "{employee_ID}"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Skills_Detail",
+	"PrefersLargeCaption": true
+}

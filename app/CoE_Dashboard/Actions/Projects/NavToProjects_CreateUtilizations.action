@@ -1,0 +1,6 @@
+{
+    "ModalPageFullscreen": false,
+    "ModalPage": true,
+    "PageToOpen": "/CoE_Dashboard/Pages/Projects/Projects_CreateUtilizations.page",
+    "_Type": "Action.Type.Navigation"
+}

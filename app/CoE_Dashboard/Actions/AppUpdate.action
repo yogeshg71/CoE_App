@@ -1,0 +1,8 @@
+{
+    "_Type": "Action.Type.ApplicationUpdate",
+    "ActionResult": {
+        "_Name": "AppUpdate"
+    },
+    "OnFailure": "/CoE_Dashboard/Rules/AppUpdateFailure.js",
+    "OnSuccess": "/CoE_Dashboard/Rules/AppUpdateSuccess.js"
+}

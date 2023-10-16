@@ -1,0 +1,178 @@
+{
+	"Caption": "Modules Detail",
+	"DesignTimeTarget": {
+		"Service": "/CoE_Dashboard/Services/service1.service",
+		"EntitySet": "Modules",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/CoE_Dashboard/Rules/Modules/NavToModules_Edit.js",
+				"Position": "Right",
+				"SystemItem": "Edit"
+			},
+			{
+				"OnPress": "/CoE_Dashboard/Actions/Modules/Modules_DetailPopover.action",
+				"Position": "Right",
+				"Caption": "More"
+			}
+		]
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Name}",
+						"Subhead": "{ID}",
+						"BodyText": "",
+						"Footnote": "",
+						"Description": "{Description}",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ID",
+							"Value": "{ID}"
+						},
+						{
+							"KeyName": "Name",
+							"Value": "{Name}"
+						},
+						{
+							"KeyName": "Description",
+							"Value": "{Description}"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "projects"
+					},
+					"ObjectCell": {
+						"AccessoryType": "disclosureIndicator",
+						"Description": "{Description}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{Name}",
+						"Footnote": "{module_ID}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "",
+						"Subhead": "{ID}",
+						"SubstatusText": "",
+						"OnPress": "/CoE_Dashboard/Actions/Projects/NavToProjects_Detail.action"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/projects",
+						"Service": "/CoE_Dashboard/Services/service1.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "employees"
+					},
+					"ObjectCell": {
+						"AccessoryType": "disclosureIndicator",
+						"Description": "{Status}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{Name}",
+						"Footnote": "{Designation}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{Email}",
+						"Subhead": "{ID}",
+						"SubstatusText": "{Department}",
+						"OnPress": "/CoE_Dashboard/Actions/Employees/NavToEmployees_Detail.action"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/employees",
+						"Service": "/CoE_Dashboard/Services/service1.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "skills"
+					},
+					"ObjectCell": {
+						"AccessoryType": "disclosureIndicator",
+						"Description": "{SUBID}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{Name}",
+						"Footnote": "{Description}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{Level}",
+						"Subhead": "{ID}",
+						"SubstatusText": "{module_ID}",
+						"OnPress": "/CoE_Dashboard/Actions/Skills/NavToSkills_Detail.action"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/skills",
+						"Service": "/CoE_Dashboard/Services/service1.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"Projects",
+				"Employees",
+				"Skills"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Modules_Detail",
+	"PrefersLargeCaption": true
+}

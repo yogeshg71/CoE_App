@@ -1,0 +1,13 @@
+{
+    "Target": {
+        "EntitySet": "Skills",
+        "Service": "/CoE_Dashboard/Services/service1.service",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "OnSuccess": "/CoE_Dashboard/Actions/DeleteEntitySuccessMessage.action",
+    "OnFailure": "/CoE_Dashboard/Actions/DeleteEntityFailureMessage.action",
+    "ActionResult": {
+        "_Name": "delete"
+    },
+    "_Type": "Action.Type.ODataService.DeleteEntity"
+}

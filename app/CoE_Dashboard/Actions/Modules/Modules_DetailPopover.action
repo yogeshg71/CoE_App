@@ -1,0 +1,20 @@
+{
+    "PopoverItems": [{
+            "Title": "Add Projects",
+            "OnPress": "/CoE_Dashboard/Rules/Modules/NavToModules_CreateProjects.js"
+        },
+        {
+            "Title": "Add Employees",
+            "OnPress": "/CoE_Dashboard/Rules/Modules/NavToModules_CreateEmployees.js"
+        },
+        {
+            "Title": "Add Skills",
+            "OnPress": "/CoE_Dashboard/Rules/Modules/NavToModules_CreateSkills.js"
+        },
+        {
+            "Title": "Delete",
+            "OnPress": "/CoE_Dashboard/Rules/Modules/Modules_DeleteConfirmation.js"
+        }
+    ],
+    "_Type": "Action.Type.PopoverMenu"
+}

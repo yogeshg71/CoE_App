@@ -1,0 +1,18 @@
+{
+    "CreateLinks": [],
+    "OnFailure": "/CoE_Dashboard/Actions/CreateEntityFailureMessage.action",
+    "OnSuccess": "/CoE_Dashboard/Actions/CreateEntitySuccessMessage.action",
+    "Properties": {
+        "ID": "#Control:ID/#Value",
+        "Name": "#Control:Name/#Value",
+        "Description": "#Control:Description/#Value"
+    },
+    "Target": {
+        "EntitySet": "Modules",
+        "Service": "/CoE_Dashboard/Services/service1.service"
+    },
+    "ActionResult": {
+        "_Name": "create"
+    },
+    "_Type": "Action.Type.ODataService.CreateEntity"
+}

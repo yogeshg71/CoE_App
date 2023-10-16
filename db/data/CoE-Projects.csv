@@ -1,0 +1,17 @@
+ID,NAME,DESCRIPTION,module_id
+PROJ001,CHCS,CHCS Project,MD001
+PROJ002,ELAM,ELAM Project,MD001
+PROJ003,EPCOS,EPCOS Project,MD001
+PROJ004,EUROGATE,EUROGATE Project,MD001
+PROJ005,Harvey Norman,Harvey Norman Project,MD001
+PROJ006,HHLA,HHLA Project,MD001
+PROJ007,Horman,Horman Proect,MD001
+PROJ008,KWS,KWS Project,MD001
+PROJ009,Savenica,Savenica Project,MD001
+PROJ010,SEG,SEG Project,MD001
+PROJ011,SembCorp,SembCorp Project,MD001
+PROJ012,Sprinter,Sprinter Project,MD001
+PROJ013,SecurityTool,Security Tools Project,MD001
+PROJ014,Vifor,Vifor Project,MD001
+PROJ015,Vitesco,Vitesco Project,MD001
+PROJ016,HF,HF Project,MD001

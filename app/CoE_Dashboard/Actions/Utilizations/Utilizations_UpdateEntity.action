@@ -1,0 +1,22 @@
+{
+    "_Type": "Action.Type.ODataService.UpdateEntity",
+    "Target": {
+        "EntitySet": "Utilizations",
+        "Service": "/CoE_Dashboard/Services/service1.service",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "Properties": {
+        "ID": "#Control:ID/#Value",
+        "UT_PER": "#Control:UT_PER/#Value",
+        "Remarks": "#Control:Remarks/#Value",
+        "module_ID": "#Control:module_ID/#SelectedValue",
+        "project_ID": "#Control:project_ID/#SelectedValue",
+        "employee_ID": "#Control:employee_ID/#SelectedValue"
+    },
+    "UpdateLinks": [],
+    "ActionResult": {
+        "_Name": "update"
+    },
+    "OnSuccess": "/CoE_Dashboard/Actions/UpdateEntitySuccessMessage.action",
+    "OnFailure": "/CoE_Dashboard/Actions/UpdateEntityFailureMessage.action"
+}

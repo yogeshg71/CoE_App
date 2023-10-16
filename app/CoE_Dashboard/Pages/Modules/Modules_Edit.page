@@ -1,0 +1,59 @@
+{
+	"Caption": "Update Modules Detail",
+	"DesignTimeTarget": {
+		"Service": "/CoE_Dashboard/Services/service1.service",
+		"EntitySet": "Modules",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [
+			{
+				"Position": "Left",
+				"Caption": "Cancel",
+				"OnPress": "/CoE_Dashboard/Rules/Modules/Modules_Cancel.js"
+			},
+			{
+				"Position": "Right",
+				"SystemItem": "Save",
+				"OnPress": "/CoE_Dashboard/Rules/Modules/Modules_UpdateEntity.js"
+			}
+		]
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0",
+					"Visible": true,
+					"Controls": [
+						{
+							"Caption": "ID",
+							"_Name": "ID",
+							"Value": "{ID}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"IsEditable": false
+						},
+						{
+							"Caption": "Name",
+							"_Name": "Name",
+							"Value": "{Name}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Description",
+							"_Name": "Description",
+							"Value": "{Description}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					]
+				}
+			],
+			"_Name": "SectionedTable0",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Modules_Edit",
+	"PrefersLargeCaption": true
+}

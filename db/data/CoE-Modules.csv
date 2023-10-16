@@ -1,0 +1,9 @@
+ID,Name,Description
+MD001,ABAP,SAP ABAP CoE
+MD002,Basis,Basis CoE
+MD003,BI/BW,SAP BI/BW CoE
+MD004,SD,SAP O2C CoE
+MD005,MM/WM,SAP P2P CoE
+MD006,FICO,SAP Finance CoE
+MD007,HCM,HCM/Sucessfactor CoE
+MD008,Auth,Auth/Security CoE
