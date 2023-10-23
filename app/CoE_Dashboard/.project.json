@@ -12,7 +12,7 @@
 	},
 	"MobileService": {
 		"Type": "standard",
-		"AdminAPI": "https://mobile-service-cockpit-api.cfapps.us10.hana.ondemand.com/cockpit/v1/org/1f7dad11-674d-4ab9-8fce-00351a89fbbc/space/f3a919eb-9dfe-454c-96ff-3144b51880de",
+		"AdminAPI": "https://mobile-service-cockpit-api.cfapps.us10.hana.ondemand.com/cockpit/v1/org/1f7dad11-674d-4ab9-8fce-00351a89fbbc/space/f3a919eb-9dfe-454c-96ff-3144b51880de/",
 		"AppId": "lcap.CoE_Dashboard.CoE_Dashboard",
 		"Destination": [
 			"CoE_DashboardService"
@@ -46,5 +46,10 @@
 			"id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
 			"version": "1.40.12"
 		}
+	},
+	"Build": {
+		"SourceMap": true,
+		"TSTarget": "es6",
+		"WMF": true
 	}
 }

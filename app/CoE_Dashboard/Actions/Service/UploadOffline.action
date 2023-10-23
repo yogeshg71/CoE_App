@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.OfflineOData.Upload",
+	"ActionResult": {
+		"_Name": "sync"
+	},
+	"OnFailure": "/COE_Dashboard/Actions/Service/SyncFailureMessage.action",
+	"OnSuccess": "/COE_Dashboard/Actions/Service/DownloadStartedMessage.action",
+	"Service": "/CoE_Dashboard/Services/service1.service"
+}

@@ -1,0 +1,37 @@
+{
+	"_Type": "Action.Type.ODataService.Initialize",
+	"ActionResult": {
+		"_Name": "init"
+	},
+	"OnFailure": "/COE_Dashboard/Actions/Service/InitializeOfflineFailureMessage.action",
+	"OnSuccess": "/COE_Dashboard/Actions/Service/InitializeOfflineSuccessMessage.action",
+	"ShowActivityIndicator": true,
+	"ActivityIndicatorText": "Downloading...",
+	"Service": "/CoE_Dashboard/Services/service1.service",
+	"DefiningRequests": [
+		{
+			"Name": "Certifications",
+			"Query": "Certifications"
+		},
+		{
+			"Name": "Employees",
+			"Query": "Employees"
+		},
+		{
+			"Name": "Modules",
+			"Query": "Modules"
+		},
+		{
+			"Name": "Projects",
+			"Query": "Projects"
+		},
+		{
+			"Name": "Skills",
+			"Query": "Skills"
+		},
+		{
+			"Name": "Utilizations",
+			"Query": "Utilizations"
+		}
+	]
+}

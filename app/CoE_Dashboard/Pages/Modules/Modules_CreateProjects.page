@@ -1,69 +1,105 @@
 {
-	"ActionBar": {
-		"Items": [
-			{
-				"OnPress": "/CoE_Dashboard/Actions/CloseModalPage_Cancel.action",
-				"Position": "Left",
-				"SystemItem": "Cancel"
-			},
-			{
-				"OnPress": "/CoE_Dashboard/Rules/Modules/Modules_CreateProjects.js",
-				"Position": "Right",
-				"SystemItem": "Save"
-			}
-		]
-	},
-	"Caption": "Create Projects",
 	"Controls": [
 		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
 			"Sections": [
 				{
-					"_Type": "Section.Type.FormCell",
-					"_Name": "SectionFormCell0",
-					"Visible": true,
 					"Controls": [
 						{
-							"Caption": "ID",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "ID",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "ID",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "Name",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "Name",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Name",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "Description",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "Description",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Description",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "module_ID",
+							"Value": "{ID}",
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "module_ID",
+							"IsVisible": true,
+							"Separator": true,
 							"AllowMultipleSelection": false,
 							"AllowEmptySelection": true,
-							"IsEditable": false,
-							"IsPickerDismissedOnSelection": true,
+							"Caption": "Module",
 							"IsSelectedSectionEnabled": true,
+							"IsPickerDismissedOnSelection": true,
+							"AllowDefaultValueIfOneItem": false,
+							"IsEditable": false,
 							"PickerItems": {
-								"DisplayValue": "{ID}",
-								"ReturnValue": "{ID}",
 								"Target": {
-									"EntitySet": "Modules",
-									"Service": "/CoE_Dashboard/Services/service1.service"
-								}
-							},
-							"_Name": "module_ID",
-							"_Type": "Control.Type.FormCell.ListPicker",
-							"Value": "{ID}"
+									"Service": "/CoE_Dashboard/Services/service1.service",
+									"EntitySet": "Modules"
+								},
+								"DisplayValue": "{Name}",
+								"ReturnValue": "{ID}"
+							}
 						}
-					]
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
 				}
 			],
-			"_Name": "SectionedTable0",
-			"_Type": "Control.Type.SectionedTable"
+			"FilterFeedbackBar": {
+				"ShowAllFilters": true,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			}
 		}
 	],
 	"_Type": "Page",
 	"_Name": "Modules_CreateProjects",
-	"PrefersLargeCaption": true
+	"Caption": "Create Projects",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "",
+				"SystemItem": "Cancel",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"OnPress": "/CoE_Dashboard/Actions/CloseModalPage_Cancel.action"
+			},
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "",
+				"SystemItem": "Save",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"OnPress": "/CoE_Dashboard/Rules/Modules/Modules_CreateProjects.js"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
 }

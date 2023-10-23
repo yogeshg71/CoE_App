@@ -53,10 +53,10 @@
                 <NavigationProperty Name="employees" Type="Collection(CoE_DashboardService.Employees)" Partner="module"/>
                 <NavigationProperty Name="skills" Type="Collection(CoE_DashboardService.Skills)" Partner="module"/>
                 <NavigationProperty Name="certifications" Type="CoE_DashboardService.Certifications" Partner="module">
-                    <ReferentialConstraint Property="module_ID" ReferencedProperty="ID"/>
+                    <ReferentialConstraint Property="ID" ReferencedProperty="module_ID"/>
                 </NavigationProperty>
                 <NavigationProperty Name="utilizations" Type="CoE_DashboardService.Utilizations" Partner="module">
-                    <ReferentialConstraint Property="module_ID" ReferencedProperty="ID"/>
+                    <ReferentialConstraint Property="ID" ReferencedProperty="module_ID"/>
                 </NavigationProperty>
             </EntityType>
             <EntityType Name="Projects">

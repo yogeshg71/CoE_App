@@ -5,9 +5,6 @@
 			"_Name": "SectionedTable0",
 			"Sections": [
 				{
-					"_Type": "Section.Type.Image",
-					"_Name": "SectionImage0",
-					"Visible": true,
 					"EmptySection": {
 						"FooterVisible": false
 					},
@@ -18,6 +15,9 @@
 						"FooterSeparator": false,
 						"ControlSeparator": false
 					},
+					"_Type": "Section.Type.Image",
+					"_Name": "SectionImage0",
+					"Visible": true,
 					"Image": "/CoE_Dashboard/Images/T-SYSTEMS-LOGO.png",
 					"Width": 200,
 					"Height": 30,
@@ -53,7 +53,7 @@
 							"Alignment": "Center",
 							"ButtonType": "Primary",
 							"Semantic": "Tint",
-							"Image": "sap-icon://course-book",
+							"Image": "sap-icon://add-coursebook",
 							"ImagePosition": "Leading",
 							"FullWidth": true,
 							"OnPress": "/CoE_Dashboard/Actions/Modules/NavToModules_List.action"
@@ -128,6 +128,16 @@
 				"Clickable": true,
 				"ItemType": "Button",
 				"OnPress": "/CoE_Dashboard/Actions/LogoutMessage.action"
+			},
+			{
+				"_Type": "Control.Type.ToolbarItem",
+				"_Name": "UploadToolbarItem",
+				"Caption": "Sync",
+				"Enabled": true,
+				"Visible": "$(PLT,true,true,false)",
+				"Clickable": true,
+				"Style": "",
+				"OnPress": "/CoE_Dashboard/Actions/Service/SyncStartedMessage.action"
 			},
 			{
 				"_Type": "Control.Type.ToolbarItem",

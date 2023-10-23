@@ -1,0 +1,35 @@
+{
+	"_Type": "Action.Type.OfflineOData.Download",
+	"ActionResult": {
+		"_Name": "sync"
+	},
+	"OnFailure": "/COE_Dashboard/Actions/Service/SyncFailureMessage.action",
+	"OnSuccess": "/COE_Dashboard/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js",
+	"Service": "/CoE_Dashboard/Services/service1.service",
+	"DefiningRequests": [
+		{
+			"Name": "Certifications",
+			"Query": "Certifications"
+		},
+		{
+			"Name": "Employees",
+			"Query": "Employees"
+		},
+		{
+			"Name": "Modules",
+			"Query": "Modules"
+		},
+		{
+			"Name": "Projects",
+			"Query": "Projects"
+		},
+		{
+			"Name": "Skills",
+			"Query": "Skills"
+		},
+		{
+			"Name": "Utilizations",
+			"Query": "Utilizations"
+		}
+	]
+}

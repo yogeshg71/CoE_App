@@ -15,6 +15,11 @@
     },
     "wattFeature.hanaTools.useLocalConnection": true,
     "mdk.uieditor": {
-        "device": "phone"
+        "left": {
+            "visible": false
+        },
+        "right": {
+            "visible": true
+        }
     }
 }

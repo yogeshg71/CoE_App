@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.ProgressBanner",
+	"OnSuccess": "/COE_Dashboard/Actions/Service/DownloadOffline.action",
+	"Message": "Download in progress...",
+	"CompletionMessage": "Download Successful",
+	"CompletionTimeout": 7
+}

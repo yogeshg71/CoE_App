@@ -1,145 +1,216 @@
 {
-	"Caption": "Update Employees Detail",
 	"DesignTimeTarget": {
 		"Service": "/CoE_Dashboard/Services/service1.service",
 		"EntitySet": "Employees",
 		"QueryOptions": ""
 	},
-	"ActionBar": {
-		"Items": [
-			{
-				"Position": "Left",
-				"Caption": "Cancel",
-				"OnPress": "/CoE_Dashboard/Rules/Employees/Employees_Cancel.js"
-			},
-			{
-				"Position": "Right",
-				"SystemItem": "Save",
-				"OnPress": "/CoE_Dashboard/Rules/Employees/Employees_UpdateEntity.js"
-			}
-		]
-	},
 	"Controls": [
 		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
 			"Sections": [
 				{
-					"_Type": "Section.Type.FormCell",
-					"_Name": "SectionFormCell0",
-					"Visible": true,
 					"Controls": [
 						{
-							"Caption": "ID",
-							"_Name": "ID",
 							"Value": "{ID}",
-							"KeyboardType": "Number",
 							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "ID",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "ID",
+							"KeyboardType": "Number",
+							"Enabled": true,
 							"IsEditable": false
 						},
 						{
-							"Caption": "Name",
-							"_Name": "Name",
 							"Value": "{Name}",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "Name",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Name",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "Status",
-							"_Name": "Status",
 							"Value": "{Status}",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "Status",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Status",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "Designation",
-							"_Name": "Designation",
 							"Value": "{Designation}",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "Designation",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Designation",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "Email",
-							"_Name": "Email",
 							"Value": "{Email}",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "Email",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Email",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "Department",
-							"_Name": "Department",
 							"Value": "{Department}",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "Department",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Department",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "Contact",
-							"_Name": "Contact",
 							"Value": "{Contact}",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "Contact",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Contact",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "Address",
-							"_Name": "Address",
 							"Value": "{Address}",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "Address",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Address",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "City",
-							"_Name": "City",
 							"Value": "{City}",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "City",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "City",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "Postal_Code",
-							"_Name": "Postal_Code",
 							"Value": "{Postal_Code}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "Postal_Code",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Postal_Code",
 							"KeyboardType": "Number",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "Country",
-							"_Name": "Country",
 							"Value": "{Country}",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "Country",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Country",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "project_ID",
-							"AllowMultipleSelection": false,
-							"AllowEmptySelection": true,
-							"IsPickerDismissedOnSelection": true,
-							"IsSelectedSectionEnabled": true,
-							"PickerItems": {
-								"DisplayValue": "{ID}",
-								"ReturnValue": "{ID}",
-								"Target": {
-									"EntitySet": "Projects",
-									"Service": "/CoE_Dashboard/Services/service1.service"
-								}
-							},
 							"Value": "{project_ID}",
+							"_Type": "Control.Type.FormCell.ListPicker",
 							"_Name": "project_ID",
-							"_Type": "Control.Type.FormCell.ListPicker"
-						},
-						{
-							"Caption": "module_ID",
+							"IsVisible": true,
+							"Separator": true,
 							"AllowMultipleSelection": false,
 							"AllowEmptySelection": true,
-							"IsPickerDismissedOnSelection": true,
+							"Caption": "Project",
 							"IsSelectedSectionEnabled": true,
+							"IsPickerDismissedOnSelection": true,
+							"AllowDefaultValueIfOneItem": false,
+							"IsEditable": true,
 							"PickerItems": {
-								"DisplayValue": "{ID}",
-								"ReturnValue": "{ID}",
 								"Target": {
-									"EntitySet": "Modules",
-									"Service": "/CoE_Dashboard/Services/service1.service"
-								}
-							},
+									"Service": "/CoE_Dashboard/Services/service1.service",
+									"EntitySet": "Projects"
+								},
+								"DisplayValue": "{Name}",
+								"ReturnValue": "{ID}"
+							}
+						},
+						{
 							"Value": "{module_ID}",
+							"_Type": "Control.Type.FormCell.ListPicker",
 							"_Name": "module_ID",
-							"_Type": "Control.Type.FormCell.ListPicker"
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Module",
+							"IsSelectedSectionEnabled": true,
+							"IsPickerDismissedOnSelection": true,
+							"AllowDefaultValueIfOneItem": false,
+							"IsEditable": true,
+							"PickerItems": {
+								"Target": {
+									"Service": "/CoE_Dashboard/Services/service1.service",
+									"EntitySet": "Modules"
+								},
+								"DisplayValue": "{Name}",
+								"ReturnValue": "{ID}"
+							}
 						}
-					]
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
 				}
 			],
-			"_Name": "SectionedTable0",
-			"_Type": "Control.Type.SectionedTable"
+			"FilterFeedbackBar": {
+				"ShowAllFilters": true,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			}
 		}
 	],
 	"_Type": "Page",
 	"_Name": "Employees_Edit",
-	"PrefersLargeCaption": true
+	"Caption": "Update Employees Detail",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "Cancel",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"OnPress": "/CoE_Dashboard/Rules/Employees/Employees_Cancel.js"
+			},
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "",
+				"SystemItem": "Save",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"OnPress": "/CoE_Dashboard/Rules/Employees/Employees_UpdateEntity.js"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
 }

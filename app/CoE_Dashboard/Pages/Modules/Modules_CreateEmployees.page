@@ -1,129 +1,200 @@
 {
-	"ActionBar": {
-		"Items": [
-			{
-				"OnPress": "/CoE_Dashboard/Actions/CloseModalPage_Cancel.action",
-				"Position": "Left",
-				"SystemItem": "Cancel"
-			},
-			{
-				"OnPress": "/CoE_Dashboard/Rules/Modules/Modules_CreateEmployees.js",
-				"Position": "Right",
-				"SystemItem": "Save"
-			}
-		]
-	},
-	"Caption": "Create Employees",
 	"Controls": [
 		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
 			"Sections": [
 				{
-					"_Type": "Section.Type.FormCell",
-					"_Name": "SectionFormCell0",
-					"Visible": true,
 					"Controls": [
 						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "ID",
+							"IsVisible": true,
+							"Separator": true,
 							"Caption": "ID",
 							"KeyboardType": "Number",
-							"_Name": "ID",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "Name",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "Name",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Name",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "Status",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "Status",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Status",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "Designation",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "Designation",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Designation",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "Email",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "Email",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Email",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "Department",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "Department",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Department",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "Contact",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "Contact",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Contact",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "Address",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "Address",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Address",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "City",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "City",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "City",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "Postal_Code",
+							"IsVisible": true,
+							"Separator": true,
 							"Caption": "Postal_Code",
 							"KeyboardType": "Number",
-							"_Name": "Postal_Code",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "Country",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "Country",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Country",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "project_ID",
-							"AllowMultipleSelection": false,
-							"AllowEmptySelection": true,
-							"IsEditable": true,
-							"IsPickerDismissedOnSelection": true,
-							"IsSelectedSectionEnabled": true,
-							"PickerItems": {
-								"DisplayValue": "{ID}",
-								"ReturnValue": "{ID}",
-								"Target": {
-									"EntitySet": "Projects",
-									"Service": "/CoE_Dashboard/Services/service1.service"
-								}
-							},
-							"_Name": "project_ID",
-							"_Type": "Control.Type.FormCell.ListPicker"
-						},
-						{
-							"Caption": "module_ID",
-							"AllowMultipleSelection": false,
-							"AllowEmptySelection": true,
-							"IsEditable": false,
-							"IsPickerDismissedOnSelection": true,
-							"IsSelectedSectionEnabled": true,
-							"PickerItems": {
-								"DisplayValue": "{ID}",
-								"ReturnValue": "{ID}",
-								"Target": {
-									"EntitySet": "Modules",
-									"Service": "/CoE_Dashboard/Services/service1.service"
-								}
-							},
-							"_Name": "module_ID",
 							"_Type": "Control.Type.FormCell.ListPicker",
-							"Value": "{ID}"
+							"_Name": "project_ID",
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Project",
+							"IsSelectedSectionEnabled": true,
+							"IsPickerDismissedOnSelection": true,
+							"AllowDefaultValueIfOneItem": false,
+							"IsEditable": true,
+							"PickerItems": {
+								"Target": {
+									"Service": "/CoE_Dashboard/Services/service1.service",
+									"EntitySet": "Projects"
+								},
+								"DisplayValue": "{Name}",
+								"ReturnValue": "{ID}"
+							}
+						},
+						{
+							"Value": "{ID}",
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "module_ID",
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Module",
+							"IsSelectedSectionEnabled": true,
+							"IsPickerDismissedOnSelection": true,
+							"AllowDefaultValueIfOneItem": false,
+							"IsEditable": false,
+							"PickerItems": {
+								"Target": {
+									"Service": "/CoE_Dashboard/Services/service1.service",
+									"EntitySet": "Modules"
+								},
+								"DisplayValue": "{Name}",
+								"ReturnValue": "{ID}"
+							}
 						}
-					]
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
 				}
 			],
-			"_Name": "SectionedTable0",
-			"_Type": "Control.Type.SectionedTable"
+			"FilterFeedbackBar": {
+				"ShowAllFilters": true,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			}
 		}
 	],
 	"_Type": "Page",
 	"_Name": "Modules_CreateEmployees",
-	"PrefersLargeCaption": true
+	"Caption": "Create Employees",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "",
+				"SystemItem": "Cancel",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"OnPress": "/CoE_Dashboard/Actions/CloseModalPage_Cancel.action"
+			},
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "",
+				"SystemItem": "Save",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"OnPress": "/CoE_Dashboard/Rules/Modules/Modules_CreateEmployees.js"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
 }

@@ -1,77 +1,112 @@
 {
-	"Caption": "Update Projects Detail",
 	"DesignTimeTarget": {
 		"Service": "/CoE_Dashboard/Services/service1.service",
 		"EntitySet": "Projects",
 		"QueryOptions": ""
 	},
-	"ActionBar": {
-		"Items": [
-			{
-				"Position": "Left",
-				"Caption": "Cancel",
-				"OnPress": "/CoE_Dashboard/Rules/Projects/Projects_Cancel.js"
-			},
-			{
-				"Position": "Right",
-				"SystemItem": "Save",
-				"OnPress": "/CoE_Dashboard/Rules/Projects/Projects_UpdateEntity.js"
-			}
-		]
-	},
 	"Controls": [
 		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
 			"Sections": [
 				{
-					"_Type": "Section.Type.FormCell",
-					"_Name": "SectionFormCell0",
-					"Visible": true,
 					"Controls": [
 						{
-							"Caption": "ID",
-							"_Name": "ID",
 							"Value": "{ID}",
 							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "ID",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "ID",
+							"Enabled": true,
 							"IsEditable": false
 						},
 						{
-							"Caption": "Name",
-							"_Name": "Name",
 							"Value": "{Name}",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "Name",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Name",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "Description",
-							"_Name": "Description",
 							"Value": "{Description}",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "Description",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Description",
+							"Enabled": true,
+							"IsEditable": true
 						},
 						{
-							"Caption": "module_ID",
+							"Value": "{module_ID}",
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "module_ID",
+							"IsVisible": true,
+							"Separator": true,
 							"AllowMultipleSelection": false,
 							"AllowEmptySelection": true,
-							"IsPickerDismissedOnSelection": true,
+							"Caption": "Module",
 							"IsSelectedSectionEnabled": true,
+							"IsPickerDismissedOnSelection": true,
+							"AllowDefaultValueIfOneItem": false,
+							"IsEditable": true,
 							"PickerItems": {
-								"DisplayValue": "{ID}",
-								"ReturnValue": "{ID}",
 								"Target": {
-									"EntitySet": "Modules",
-									"Service": "/CoE_Dashboard/Services/service1.service"
-								}
-							},
-							"Value": "{module_ID}",
-							"_Name": "module_ID",
-							"_Type": "Control.Type.FormCell.ListPicker"
+									"Service": "/CoE_Dashboard/Services/service1.service",
+									"EntitySet": "Modules"
+								},
+								"DisplayValue": "{Name}",
+								"ReturnValue": "{ID}"
+							}
 						}
-					]
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
 				}
 			],
-			"_Name": "SectionedTable0",
-			"_Type": "Control.Type.SectionedTable"
+			"FilterFeedbackBar": {
+				"ShowAllFilters": true,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			}
 		}
 	],
 	"_Type": "Page",
 	"_Name": "Projects_Edit",
-	"PrefersLargeCaption": true
+	"Caption": "Update Projects Detail",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "Cancel",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"OnPress": "/CoE_Dashboard/Rules/Projects/Projects_Cancel.js"
+			},
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "",
+				"SystemItem": "Save",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"OnPress": "/CoE_Dashboard/Rules/Projects/Projects_UpdateEntity.js"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
 }
