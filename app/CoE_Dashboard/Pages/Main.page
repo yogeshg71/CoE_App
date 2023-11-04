@@ -27,74 +27,116 @@
 				},
 				{
 					"Layout": {
-						"LayoutType": "Vertical",
+						"LayoutType": "Horizontal",
 						"HorizontalAlignment": "Leading"
 					},
 					"_Type": "Section.Type.ButtonTable",
 					"_Name": "SectionButtonTable0",
+					"Visible": true,
 					"EmptySection": {
 						"FooterVisible": false
 					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
 					"Buttons": [
 						{
-							"_Name": "SectionButton1",
-							"Title": "CoE Employees",
-							"Alignment": "Center",
-							"ButtonType": "Primary",
-							"Semantic": "Tint",
-							"Image": "sap-icon://employee",
-							"ImagePosition": "Leading",
-							"FullWidth": true,
-							"OnPress": "/CoE_Dashboard/Actions/Employees/NavToEmployees_List.action"
-						},
-						{
 							"_Name": "SectionButton2",
-							"Title": "CoE Modules",
+							"Title": "Modules",
 							"Alignment": "Center",
 							"ButtonType": "Primary",
 							"Semantic": "Tint",
 							"Image": "sap-icon://add-coursebook",
 							"ImagePosition": "Leading",
 							"FullWidth": true,
+							"Visible": true,
+							"Enabled": true,
 							"OnPress": "/CoE_Dashboard/Actions/Modules/NavToModules_List.action"
 						},
 						{
-							"_Name": "SectionButton3",
-							"Title": "CoE Projects",
+							"_Name": "SectionButton1",
+							"Title": "Employees",
 							"Alignment": "Center",
 							"ButtonType": "Primary",
 							"Semantic": "Tint",
-							"Image": "sap-icon://learning-assistant",
+							"Image": "sap-icon://employee",
 							"ImagePosition": "Leading",
 							"FullWidth": true,
-							"OnPress": "/CoE_Dashboard/Actions/Projects/NavToProjects_List.action"
-						},
+							"Visible": true,
+							"Enabled": true,
+							"OnPress": "/CoE_Dashboard/Actions/Employees/NavToEmployees_List.action"
+						}
+					]
+				},
+				{
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable1",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Buttons": [
 						{
 							"_Name": "SectionButton4",
-							"Title": "CoE Skill Matrix",
+							"Title": "Skill Matrix",
 							"Alignment": "Center",
 							"ButtonType": "Primary",
 							"Semantic": "Tint",
 							"Image": "sap-icon://activities",
 							"ImagePosition": "Leading",
 							"FullWidth": true,
+							"Visible": true,
+							"Enabled": true,
 							"OnPress": "/CoE_Dashboard/Actions/Skills/NavToSkills_List.action"
 						},
 						{
-							"_Name": "SectionButton5",
-							"Title": "Utilization Overview",
+							"_Name": "SectionButton3",
+							"Title": "Projects",
 							"Alignment": "Center",
 							"ButtonType": "Primary",
 							"Semantic": "Tint",
-							"Image": "sap-icon://check-availability",
+							"Image": "sap-icon://learning-assistant",
 							"ImagePosition": "Leading",
 							"FullWidth": true,
 							"Visible": true,
-							"OnPress": "/CoE_Dashboard/Actions/Utilizations/NavToUtilizations_List.action"
-						},
+							"Enabled": true,
+							"OnPress": "/CoE_Dashboard/Actions/Projects/NavToProjects_List.action"
+						}
+					],
+					"Layout": {
+						"LayoutType": "Horizontal",
+						"HorizontalAlignment": "Leading"
+					}
+				},
+				{
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable2",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Buttons": [
 						{
 							"_Name": "SectionButton0",
-							"Title": "CoE Certifications",
+							"Title": "Certifications",
 							"Alignment": "Center",
 							"ButtonType": "Primary",
 							"Semantic": "Tint",
@@ -102,14 +144,36 @@
 							"ImagePosition": "Leading",
 							"FullWidth": true,
 							"Visible": true,
+							"Enabled": true,
 							"OnPress": "/CoE_Dashboard/Actions/Certifications/NavToCertifications_List.action"
+						},
+						{
+							"_Name": "SectionButton5",
+							"Title": "Utilizations",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Tint",
+							"Image": "sap-icon://check-availability",
+							"ImagePosition": "Leading",
+							"FullWidth": true,
+							"Visible": true,
+							"Enabled": true,
+							"OnPress": "/CoE_Dashboard/Actions/Utilizations/NavToUtilizations_List.action"
 						}
-					]
+					],
+					"Layout": {
+						"LayoutType": "Horizontal",
+						"HorizontalAlignment": "Leading"
+					}
 				}
 			],
 			"LoadingIndicator": {
 				"Enabled": false,
 				"Text": ""
+			},
+			"FilterFeedbackBar": {
+				"ShowAllFilters": true,
+				"_Type": "Control.Type.FilterFeedbackBar"
 			}
 		}
 	],

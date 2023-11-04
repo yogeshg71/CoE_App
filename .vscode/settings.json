@@ -16,7 +16,7 @@
     "wattFeature.hanaTools.useLocalConnection": true,
     "mdk.uieditor": {
         "left": {
-            "visible": false
+            "visible": true
         },
         "right": {
             "visible": true
