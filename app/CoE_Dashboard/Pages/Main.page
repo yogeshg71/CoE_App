@@ -1,6 +1,10 @@
 {
 	"Controls": [
 		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": true,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
 			"_Type": "Control.Type.SectionedTable",
 			"_Name": "SectionedTable0",
 			"Sections": [
@@ -27,14 +31,8 @@
 				},
 				{
 					"Layout": {
-						"LayoutType": "Horizontal",
+						"LayoutType": "Vertical",
 						"HorizontalAlignment": "Leading"
-					},
-					"_Type": "Section.Type.ButtonTable",
-					"_Name": "SectionButtonTable0",
-					"Visible": true,
-					"EmptySection": {
-						"FooterVisible": false
 					},
 					"Separators": {
 						"TopSectionSeparator": false,
@@ -42,6 +40,12 @@
 						"HeaderSeparator": true,
 						"FooterSeparator": true,
 						"ControlSeparator": true
+					},
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
 					},
 					"Buttons": [
 						{
@@ -73,18 +77,22 @@
 					]
 				},
 				{
-					"_Type": "Section.Type.ButtonTable",
-					"_Name": "SectionButtonTable1",
-					"Visible": true,
-					"EmptySection": {
-						"FooterVisible": false
-					},
 					"Separators": {
 						"TopSectionSeparator": false,
 						"BottomSectionSeparator": true,
 						"HeaderSeparator": true,
 						"FooterSeparator": true,
 						"ControlSeparator": true
+					},
+					"Layout": {
+						"LayoutType": "Vertical",
+						"HorizontalAlignment": "Leading"
+					},
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable1",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
 					},
 					"Buttons": [
 						{
@@ -113,25 +121,25 @@
 							"Enabled": true,
 							"OnPress": "/CoE_Dashboard/Actions/Projects/NavToProjects_List.action"
 						}
-					],
-					"Layout": {
-						"LayoutType": "Horizontal",
-						"HorizontalAlignment": "Leading"
-					}
+					]
 				},
 				{
-					"_Type": "Section.Type.ButtonTable",
-					"_Name": "SectionButtonTable2",
-					"Visible": true,
-					"EmptySection": {
-						"FooterVisible": false
-					},
 					"Separators": {
 						"TopSectionSeparator": false,
 						"BottomSectionSeparator": true,
 						"HeaderSeparator": true,
 						"FooterSeparator": true,
 						"ControlSeparator": true
+					},
+					"Layout": {
+						"LayoutType": "Vertical",
+						"HorizontalAlignment": "Leading"
+					},
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable2",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
 					},
 					"Buttons": [
 						{
@@ -160,20 +168,12 @@
 							"Enabled": true,
 							"OnPress": "/CoE_Dashboard/Actions/Utilizations/NavToUtilizations_List.action"
 						}
-					],
-					"Layout": {
-						"LayoutType": "Horizontal",
-						"HorizontalAlignment": "Leading"
-					}
+					]
 				}
 			],
 			"LoadingIndicator": {
 				"Enabled": false,
 				"Text": ""
-			},
-			"FilterFeedbackBar": {
-				"ShowAllFilters": true,
-				"_Type": "Control.Type.FilterFeedbackBar"
 			}
 		}
 	],
